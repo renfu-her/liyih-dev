@@ -209,7 +209,7 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 	$response = curl_exec($ch);
 	curl_close($ch);
 
-	if (!$mail->send()) {
+	if ($response === false) {
 		echo 'Mailer Error: ' . $mail->ErrorInfo;
 		echo "<Script Language =\"Javascript\">";
 		echo "alert('伺服器寄送失敗，或請直接來信或來電連繫，謝謝您!');";
